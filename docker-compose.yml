@@ -1,0 +1,7 @@
+node-red:
+  build: .
+  # To use as this source code as development enviroment
+  volumes:
+    - ".:/workspace"
+  ports:
+    - "1880:1880"

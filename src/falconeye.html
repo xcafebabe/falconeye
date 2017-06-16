@@ -1,0 +1,85 @@
+<!-- DeviceStats -->
+<script type='text/x-red' data-template-name='falconeye'>
+  <div class='form-row'>
+    <label for='node-input-name'>
+      <i class='fa fa-tag'></i>
+      <span data-i18n='falconeye.label.name'></span>
+    </label>
+    <input type='text' id='node-input-name' data-i18n='[placeholder]falconeye.label.name'>
+  </div>
+  <div class="form-row">
+    <label for='node-input-provider'>
+      <i class='fa fa-eye'></i>
+      <span data-i18n='falconeye.label.portal'></span>
+    </label>
+    <select id="node-input-provider">
+      <option value="ideal">idealista.com</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for='node-input-url'>
+      <i class='fa fa-link'></i>
+      <span data-i18n='falconeye.label.url'></span>
+    </label>
+    <input type='text' id='node-input-url' data-i18n='[placeholder]falconeye.label.url'>
+  </div>
+  <div class="form-row">
+    <label for='node-input-keywords'>
+      <i class='fa fa-tags'></i>
+      <span data-i18n='falconeye.label.keywords'></span>
+    </label>
+    <input type='text' id='node-input-keywords' data-i18n='[placeholder]falconeye.value.keywords'>
+  </div>
+
+  <div class='form-row'>
+    <label for='node-input-topic'>
+      <i class='fa fa-tasks'></i>
+      <span data-i18n='falconeye.label.topic'></span>
+    </label>
+    <input type='text' id='node-input-topic' data-i18n='[placeholder]falconeye.value.topic'>
+  </div>
+
+  <h5> Advanced options </h5>
+
+  <div class="form-row">
+    <label for='node-input-delay'>
+      <i class='fa fa-flask'></i>
+      <span data-i18n='falconeye.label.delay'></span>
+    </label>
+    <input type='text' id='node-input-delay' data-i18n='[placeholder]falconeye.value.delay'>
+  </div>
+
+  <div class="form-row">
+    <label for='node-input-timeout'>
+      <i class='fa fa-flask'></i>
+      <span data-i18n='falconeye.label.timeout'></span>
+    </label>
+    <input type='text' id='node-input-timeout' data-i18n='[placeholder]falconeye.value.timeout'>
+  </div>
+
+</script>
+
+<script type='text/javascript'>
+  RED.nodes.registerType('falconeye', {
+    category: 'input',
+    defaults: {
+      name: { value: '', required: true },
+      url: { value: '', required: true, validate:RED.validators.regex(/^(http|https):\/\//)},
+      provider: { value: 'wework', required: true},
+      delay: {value: 15000, required:true, validate:RED.validators.number()},
+      timeout: {value: 15000, required:true, validate:RED.validators.number()},
+      keywords: {value: ''},
+      topic: {value: '', required:true, validate:function(v) { return (v || this.name).split(" ").map((key)=> key.trim()).join("") }}
+    },
+    color: '#3FADB5',
+    inputs: 1,
+    outputs: 1,
+    icon: 'bridge.png',
+    label: function() {
+      return this.name || this._('falconeye.label.category');
+    },
+    labelStyle: function() {
+      return this.name ? 'node_label_italic' : '';
+    }
+  });
+</script>

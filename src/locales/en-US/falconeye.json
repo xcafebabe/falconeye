@@ -1,0 +1,26 @@
+{
+  "falconeye" : {
+    "label" : {
+      "category" : "FalconEye",
+      "name": "Name",
+      "url": "Url",
+      "portal" : "Real State Portal",
+      "delay": "Delay (ms)",
+      "timeout": "Timeout (ms)",
+      "keywords":  "Excluded",
+      "topic": "Topic"
+    },
+    "value": {
+      "delay" : "15000",
+      "timeout": "15000",
+      "keywords": "Excluded words: west, pool",
+      "topic": "my-topic"
+    },
+    "status" : {
+      "heartbeat" : "dup"
+    },
+    "errors" : {
+      "unknown" : "Unknown Error (__error__)"
+    }
+  }
+}

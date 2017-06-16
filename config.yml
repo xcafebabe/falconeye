@@ -1,0 +1,17 @@
+# Gulp will use this configuration
+paths:
+  # Path to dist folder
+  dist: "./lib/"
+  # Source Locations
+  src:
+    js:
+    - "./src/**/*.js"
+    - "!./src/node_modules/**/*.js"
+    assets:
+    - "./src/**/*.html"
+    - "./src/**/*.json"
+rollupConfig:
+  entries: './src/falconeye.js'
+  external:
+  - 'x-ray'
+  - 'chrono-node'

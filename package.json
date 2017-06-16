@@ -1,0 +1,61 @@
+{
+  "name": "falconeye",
+  "version": "0.0.1",
+  "description": "Falcon Eye, node-red-contribution to search apartments in several websites",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xcafebabe/falconeye.git"
+  },
+  "keywords": [
+    "javascript",
+    "bootstrap",
+    "boilerplate",
+    "es6",
+    "es2015",
+    "babel",
+    "starter kit"
+  ],
+  "author": "Luis Toubes <luis@toub.es>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xcafebabe/falconeye/issues"
+  },
+  "homepage": "https://github.com/xcafebabe/falconeye#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.0.1",
+    "del": "^2.2.2",
+    "eslint": "^3.19.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-bump": "^2.7.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-mocha": "^4.3.1",
+    "gulp-rollup": "^2.11.0",
+    "js-yaml": "^3.8.4",
+    "mocha": "^3.4.2",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-multi-entry": "^2.0.1",
+    "rollup-plugin-uglify": "^1.0.2",
+    "yargs": "^8.0.1"
+  },
+  "node-red": {
+    "nodes": {
+      "falnconeye": "./lib/falconeye.js"
+    }
+  },
+  "dependencies": {
+    "chrono-node": "^1.3.2",
+    "x-ray": "^2.3.2"
+  }
+}

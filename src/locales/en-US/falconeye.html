@@ -1,0 +1,20 @@
+<script type="text/x-red" data-help-name="jobsify">
+  <p>Emits a list of current flats according to a real state provider</p>
+  <h3>Node input</h3>
+  <p>
+  This node scrap the <code>url</code> provided using <code>real state portal</code> query selectors. It will emit list of aparments founded in <code>msg.payload</msg>.
+  If you want to exclude  any of the results, use <code>keywords</code> to make a list with words you dont want to read
+  <code>topic</code> is node key usefull to identify every falconeye instance
+  <h3><code>msg.payload</code> Example Output</h3>
+  <pre>
+  [
+    {
+      id: ''
+      title: ''
+      agency: ''
+      date: ''
+      url: ''
+    }
+  ]
+  }</pre>
+</script>
