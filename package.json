@@ -55,7 +55,6 @@
     }
   },
   "dependencies": {
-    "chrono-node": "^1.3.2",
     "x-ray": "^2.3.2"
   }
 }

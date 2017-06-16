@@ -14,4 +14,3 @@ rollupConfig:
   entries: './src/falconeye.js'
   external:
   - 'x-ray'
-  - 'chrono-node'
