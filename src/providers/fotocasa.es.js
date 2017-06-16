@@ -6,7 +6,7 @@ export default class extends FlatProvider {
     super({
       id: 'foto',
       name: 'fotocasa.es',
-      logo: 'http://jobs.smashingmagazine.com/images/logo.png',
+      logo: 'http://login.inmofactory.com/Content/images/logo-fotocasa-portal.png',
       scope: '.re-Searchresult .re-Searchresult-itemRow',
       selectors: {
         id: '@data-reactid',
