@@ -22,5 +22,6 @@ export default class extends FlatProvider {
   }
 
   refine(item) {
+    item.id = this.hash(item.id + '-milanuncios')
   }
 }

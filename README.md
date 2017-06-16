@@ -12,7 +12,6 @@ Real State  Currently supported:
 - https://idealista.com
 - https://fotocasa.es
 - https://milanuncios.com
-- https://pisos.com
 
 For the moment the only way to install this node is with some development mojo. If someone is interested to include more real state portals, just open an issue with your request. Suggestions & critics are welcome as well.
 
