@@ -1,8 +1,10 @@
 import Xray from 'x-ray'
 import Idealista from './providers/idealista.com.js'
+import FotoCasa from './providers/fotocasa.es.js'
 
 const providers = {
-  ideal: new Idealista()
+  ideal: new Idealista(),
+  foto: new FotoCasa()
 }
 
 export default (RED) => {
@@ -30,7 +32,7 @@ export default (RED) => {
           .paginate(this.provider.pagination)((err, items) => {
             if (err) {
               this.updateStatus('error', 'red')
-              this.error('Error ocurred during scrapping', {payload: err})
+              this.error('Error ocurred during scrapping ' + err.toString())
               return false
             }
 

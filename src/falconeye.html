@@ -14,6 +14,7 @@
     </label>
     <select id="node-input-provider">
       <option value="ideal">idealista.com</option>
+      <option value="foto">fotocasa.es</option>
     </select>
   </div>
   <div class="form-row">
@@ -65,7 +66,7 @@
     defaults: {
       name: { value: '', required: true },
       url: { value: '', required: true, validate:RED.validators.regex(/^(http|https):\/\//)},
-      provider: { value: 'wework', required: true},
+      provider: { value: 'ideal', required: true},
       delay: {value: 15000, required:true, validate:RED.validators.number()},
       timeout: {value: 15000, required:true, validate:RED.validators.number()},
       keywords: {value: ''},

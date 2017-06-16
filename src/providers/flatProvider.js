@@ -1,5 +1,3 @@
-import Chrono from 'chrono-node'
-
 const EMPTY_VALUE = ''
 const KEYWORD_SEPARATOR = ','
 
@@ -16,10 +14,12 @@ export default class {
         id: EMPTY_VALUE,
         title: EMPTY_VALUE,
         url: EMPTY_VALUE,
-        location: EMPTY_VALUE,
-        date: EMPTY_VALUE,
-        agency: EMPTY_VALUE,
-        description: EMPTY_VALUE
+        price: EMPTY_VALUE,
+        rooms: EMPTY_VALUE,
+        size: EMPTY_VALUE,
+        description: EMPTY_VALUE,
+        contact: EMPTY_VALUE,
+        image: EMPTY_VALUE
       }
     }
 
@@ -42,12 +42,28 @@ export default class {
    */
   disguise(items = []) {
     if (items.length > 0) {
-      for (let item of items) {
-        item.id = this.hash(item.title + item.agency)
-        item.created = new Date()
-        item.date = Chrono.parseDate(item.date) || item.date
-        this.refine(item)
+      items.averages = {
+        price: 0,
+        meterPrice: 0
       }
+      let price, size = 0
+      for (let item of items) {
+        price = parseFloat(item.price) || 1
+        size = parseFloat(item.size) || 1
+        item.meterPrice = parseFloat(price/size)
+        item.created = new Date()
+        item.id = item.id || this.hash(item.title + item.agency)
+        item.title = item.title || 'No Title'
+        item.description = item.description || 'No Description'
+
+        this.refine(item)
+
+        items.averages.price += price
+        items.averages.meterPrice += parseFloat(item.average)
+      }
+
+      items.averages.price = items.averages.price / items.length
+      items.averages.meterPrice = items.averages.meterPrice / items.length
     }
   }
 
@@ -136,5 +152,9 @@ export default class {
 
   clean(text = '') {
     return text && text.replace(/[\n\r]+/g, '').replace(/\s{2,10}/g, ' ').trim()
+  }
+
+  extractNumbers(value = '') {
+    return value.match(/\d+/g)
   }
 }

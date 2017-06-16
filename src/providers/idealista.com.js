@@ -1,25 +1,31 @@
-import JobProvider from './jobProvider'
+import FlatProvider from './flatProvider'
 
-export default class extends JobProvider {
+export default class extends FlatProvider {
   constructor() {
     super({
-      id: 'newjob',
-      name: 'newitjbos.com',
-      logo: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=NewIt&w=160&h=160',
-      scope: 'div.search-results article.listing-item',
+      id: 'ideal',
+      name: 'idealista.com',
+      logo: 'https://st1.idealista.com/static/common/icons/152x152.png?20170615151429',
+      scope: '.items-container article .item',
       selectors: {
-        title: 'div.listing-item__title a',
-        url: 'div.listing-item__title a@href',
-        date: 'div.listing-item__date',
-        company: 'div.listing-item__desc',
-        description: 'div.listing-item__desc'
-      }
+        id: '@data-adid',
+        title: '.item-link',
+        url: '.item-link@href',
+        price: '.item-price',
+        rooms: '.item-detail:nth-of-type(1)',
+        size: '.item-detail:nth-of-type(2)',
+        description: '.item-description',
+        contact: '.icon-phone',
+        image: '.item-gallery img@data-ondemand-img',
+        //Customs
+        floor: '.item-detail:nth-of-type(3)'
+      },
+      pagination: '.pagination .next a@href'
     })
   }
 
   refine(item) {
-    const temp = this.clean(item.description)
-    item.company = temp.substring(0, 15)
-    item.description = temp.substring(16, temp.length - Math.floor(temp.length * 0.85)) // Only 15% of text content
+    item.description = (item.description || 'No Description, ') + ' Extra: ' + item.floor
+    item.id = this.hash(item.id + '-idealista')
   }
 }
