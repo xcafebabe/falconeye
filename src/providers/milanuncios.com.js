@@ -23,5 +23,6 @@ export default class extends FlatProvider {
 
   refine(item) {
     item.id = this.hash(item.id + '-milanuncios')
+    item.image = item.image || 'https://placeholdit.imgix.net/~text?txtsize=33&txt=MilAnun&w=160&h=160'
   }
 }
