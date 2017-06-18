@@ -17,6 +17,7 @@ export default class {
         price: EMPTY_VALUE,
         rooms: EMPTY_VALUE,
         size: EMPTY_VALUE,
+        floor: EMPTY_VALUE,
         description: EMPTY_VALUE,
         contact: EMPTY_VALUE,
         image: EMPTY_VALUE

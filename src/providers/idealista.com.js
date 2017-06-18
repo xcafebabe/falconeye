@@ -17,7 +17,6 @@ export default class extends FlatProvider {
         description: '.item-description',
         contact: '.icon-phone',
         image: '.item-gallery img@data-ondemand-img',
-        //Customs
         floor: '.item-detail:nth-of-type(3)'
       },
       pagination: '.pagination .next a@href'
