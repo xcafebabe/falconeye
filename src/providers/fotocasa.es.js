@@ -24,6 +24,6 @@ export default class extends FlatProvider {
 
   refine(item) {
     item.image = 'https://placeholdit.imgix.net/~text?txtsize=33&txt=Fotocasa&w=160&h=160'
-    item.id = this.hash(item.id + '-fotocasa')
+    item.id = this.hash(item.id.split('$')[1] + '-fotocasa')
   }
 }
