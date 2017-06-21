@@ -5,7 +5,7 @@ Node-red-contrib module to help you scrap apartments/flat results from different
 
 It will scrap supported real state portals and will give you a fancy json with usefull data able to send by email, telegram, store in db or file.
 
-Is it based on [maester](https://github.com/xcafebabe/maester)
+Is it based on [jobsify](https://github.com/xcafebabe/jobsify)
 
 Real State  Currently supported:
 
@@ -30,14 +30,15 @@ After seeing in your browser Node-Red Main page, import this [flow](https://raw.
 
 You will get a flow like this
 
-<a href="https://github.com/xcafebabe/falconeye/raw/master/examples/example1a.png" target="_blank">
-  <img alt="falconeye" src="https://github.com/xcafebabe/falconeye/raw/master/examples/example1a.png" width="600px" />
+<a href="https://github.com/xcafebabe/falconeye/raw/master/examples/example1.png" target="_blank">
+  <img alt="falconeye" src="https://github.com/xcafebabe/falconeye/raw/master/examples/example1.png" width="600px" />
 </a>
 
 Now just add some extra nodes to do what you want with data.
 
 Nice To Have
-------------
+------------s
 
-- Support Job Portals based on Javascript. (Use PhantomJs to scrap websites)
+- Support Real State Portals based on Javascript. (Use Nightmare to scrap websites)
 - Test Environment and Unit tests.
+- Howto about using falconeye in a live node-red service.

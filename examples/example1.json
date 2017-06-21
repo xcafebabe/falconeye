@@ -1,0 +1,112 @@
+[
+  {
+    "id": "550003fc.1bc67c",
+    "type": "inject",
+    "z": "adb1ba6a.230c08",
+    "name": "",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 125,
+    "y": 257,
+    "wires": [
+      [
+        "1f76b0d5.a8b7ef",
+        "428fdd47.768004",
+        "cb169ba5.2b88c8",
+        "c1ab5853.cb8398"
+      ]
+    ]
+  },
+  {
+    "id": "1f76b0d5.a8b7ef",
+    "type": "falconeye",
+    "z": "adb1ba6a.230c08",
+    "name": "Rent Barcelona Gotic Idealista < 800",
+    "url": "https://www.idealista.com/alquiler-viviendas/barcelona/ciutat-vella/el-gotic/con-precio-hasta_800/",
+    "provider": "ideal",
+    "delay": 15000,
+    "timeout": 15000,
+    "keywords": "",
+    "topic": "gotic-idealista",
+    "x": 437,
+    "y": 124,
+    "wires": [
+      [
+        "fe9b6bca.5837b8"
+      ]
+    ]
+  },
+  {
+    "id": "fe9b6bca.5837b8",
+    "type": "debug",
+    "z": "adb1ba6a.230c08",
+    "name": "",
+    "active": true,
+    "console": "false",
+    "complete": "false",
+    "x": 755,
+    "y": 234,
+    "wires": []
+  },
+  {
+    "id": "428fdd47.768004",
+    "type": "falconeye",
+    "z": "adb1ba6a.230c08",
+    "name": "Rent Madrid Lavapies Fotocasa < 800",
+    "url": "http://www.fotocasa.es/es/alquiler/casas/madrid-capital/embajadores-lavapies/l?text=madrid,%20lavapies&maxPrice=800",
+    "provider": "foto",
+    "delay": 15000,
+    "timeout": 15000,
+    "keywords": "",
+    "topic": "madrid-fotocasa",
+    "x": 432,
+    "y": 211,
+    "wires": [
+      [
+        "fe9b6bca.5837b8"
+      ]
+    ]
+  },
+  {
+    "id": "cb169ba5.2b88c8",
+    "type": "falconeye",
+    "z": "adb1ba6a.230c08",
+    "name": "Rent Sevilla MilAnuncios < 500",
+    "url": "https://www.milanuncios.com/alquiler-de-pisos-en-sevilla/?hasta=500",
+    "provider": "mil",
+    "delay": 15000,
+    "timeout": 15000,
+    "keywords": "",
+    "topic": "sevilla-mil",
+    "x": 430,
+    "y": 296,
+    "wires": [
+      [
+        "fe9b6bca.5837b8"
+      ]
+    ]
+  },
+  {
+    "id": "c1ab5853.cb8398",
+    "type": "falconeye",
+    "z": "adb1ba6a.230c08",
+    "name": "Rent Bilbao Pisos < 900",
+    "url": "https://www.pisos.com/alquiler/pisos-abando_ensanche/hasta-900/",
+    "provider": "pisos",
+    "delay": 15000,
+    "timeout": 15000,
+    "keywords": "",
+    "topic": "bilbao-pisos",
+    "x": 430,
+    "y": 373,
+    "wires": [
+      [
+        "fe9b6bca.5837b8"
+      ]
+    ]
+  }
+]
