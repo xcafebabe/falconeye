@@ -37,7 +37,7 @@ You will get a flow like this
 Now just add some extra nodes to do what you want with data.
 
 Nice To Have
-------------s
+------------
 
 - Support Real State Portals based on Javascript. (Use Nightmare to scrap websites)
 - Test Environment and Unit tests.
