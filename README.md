@@ -25,6 +25,7 @@ If you want to try it out
 git clone https://github.com/xcafebabe/falconeye && \
 docker-compose up -d && \
 firefox http://localhost:1880
+```
 
 After seeing in your browser Node-Red Main page, import this [flow](https://raw.githubusercontent.com/xcafebabe/falconeye/master/examples/example1.json).
 
