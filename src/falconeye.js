@@ -2,11 +2,13 @@ import Xray from 'x-ray'
 import Idealista from './providers/idealista.com.js'
 import FotoCasa from './providers/fotocasa.es.js'
 import MilAnuncios from './providers/milanuncios.com.js'
+import Pisos from './providers/pisos.com.js'
 
 const providers = {
   ideal: new Idealista(),
   foto: new FotoCasa(),
-  mil: new MilAnuncios()
+  mil: new MilAnuncios(),
+  pisos: new Pisos()
 }
 
 export default (RED) => {
